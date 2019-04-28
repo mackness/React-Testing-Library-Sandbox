@@ -85,13 +85,11 @@ describe("components", () => {
       </MockedProvider>
     );
 
-    const listContainerNode = await waitForElement(() => {
-      return getByTestId("list-container");
+    await waitForElement(() => {
+      return getByText(/Charmander/i);
     });
 
-    console.log(prettyDOM(listContainerNode));
-
-    fireEvent.scroll(listContainerNode, { y: 2000 });
+    fireEvent.scroll(getByTestId("list-container"), { y: 500 });
 
     expect(loadMoreItems).toBeCalledTimes(1);
   });
