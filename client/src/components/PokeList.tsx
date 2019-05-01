@@ -1,13 +1,14 @@
 import React, { useState, useReducer, useContext } from "react";
+
 import { FixedSizeList as List } from "react-window";
 import InfiniteLoader from "react-window-infinite-loader";
+
+import { ApolloQueryResult } from "apollo-client";
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
+
 import { css } from "emotion";
-
-import { AppContext } from "../context";
-
-import { AppActionTypes } from "../reducers";
+import styled from "@emotion/styled";
 
 import ListRow from "./ListRow";
 
@@ -21,14 +22,17 @@ export const POKE_LIST = gql`
 
 export interface PokeListProps {
   updateCurrentPokemon: (pokemonName: string) => void;
-  loadMoreItems: (fetchMore: Function, offset: number) => Promise<any>;
+  loadMoreItems: (
+    fetchMore: Function,
+    offset: number
+  ) => ApolloQueryResult<any>;
 }
 
 const loadMoreItems = (
   fetchMore: Function,
   offset: number,
   limit: number = 30
-): Promise<any> => {
+): ApolloQueryResult<any> => {
   return fetchMore({
     variables: {
       offset,
@@ -48,7 +52,7 @@ function PokeList({
   loadMoreItems
 }: PokeListProps): JSX.Element {
   return (
-    <div className={css({ border: "solid 1px #000" })}>
+    <Container>
       <Query query={POKE_LIST}>
         {({ loading, error, fetchMore, data: { pokemonList } }: any) => {
           if (loading) return <p>loading</p>;
@@ -88,12 +92,18 @@ function PokeList({
           );
         }}
       </Query>
-    </div>
+    </Container>
   );
 }
 
 PokeList.defaultProps = {
   loadMoreItems
 };
+
+const Container = styled("div")({
+  width: 250,
+  height: "auto",
+  borderTop: "solid 3px red"
+});
 
 export default PokeList;

@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/core": "^10.0.10",
+    "@emotion/styled": "^10.0.10",
     "@reach/router": "^1.2.1",
     "@types/jest": "24.0.11",
     "@types/node": "11.13.8",
@@ -18,8 +20,8 @@
     "react": "^16.8.6",
     "react-apollo": "^2.5.1",
     "react-dom": "^16.8.6",
-    "react-emotion": "^9.2.12",
-    "react-redux": "^7.0.2",
+    "react-emotion": "^10.0.0",
+    "react-redux": "^7.0.3",
     "react-scripts": "3.0.0",
     "react-window": "^1.8.1",
     "react-window-infinite-loader": "^1.0.3",
@@ -55,6 +57,7 @@
     "@types/redux-logger": "^3.0.7",
     "apollo": "^2.5.3",
     "jest-dom": "^2.1.0",
+    "jest-emotion": "^10.0.10",
     "react-testing-library": "^5.2.3",
     "redux-logger": "^3.0.6"
   }

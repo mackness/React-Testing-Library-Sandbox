@@ -6,10 +6,10 @@ interface ListRowProps {
   style: any;
 }
 
-export default ({ onClick, data, style }: ListRowProps) => {
+export default function ListRow({ onClick, data, style }: ListRowProps) {
   return (
     <p onClick={onClick} style={style}>
       {data}
     </p>
   );
-};
+}

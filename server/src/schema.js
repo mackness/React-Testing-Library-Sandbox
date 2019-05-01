@@ -14,6 +14,9 @@ const typeDefs = gql`
     pokemonList(limit: Int, offset: Int): [Pokemon]!
     pokemon(name: String!): Pokemon!
   }
+  type Mutation {
+    login(email: String): String # login token
+  }
 `;
 
 module.exports = typeDefs;

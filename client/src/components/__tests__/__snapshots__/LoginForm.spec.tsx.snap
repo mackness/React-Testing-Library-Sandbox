@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component LoginForm should match the reference snapshot 1`] = `
+<div>
+  <form>
+    <label
+      for="email-input"
+    >
+      email
+    </label>
+    <input
+      id="email-input"
+      label="email"
+      name="email"
+      required=""
+      type="text"
+      value=""
+    />
+    <button
+      type="submit"
+    >
+      Log In
+    </button>
+  </form>
+</div>
+`;

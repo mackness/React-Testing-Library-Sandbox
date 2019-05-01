@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components Login should pass snapshot test 1`] = `
+.emotion-0 {
+  margin-bottom: 8px;
+}
+
+<div>
+  <h3
+    class="emotion-0"
+  >
+    Pokèdex
+  </h3>
+  <span>
+    login form
+  </span>
+</div>
+`;

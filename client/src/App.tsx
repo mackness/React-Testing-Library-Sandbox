@@ -32,7 +32,7 @@ const App = () => {
   }, [context.store]);
   return (
     <div>
-      <h1>Pokèdex</h1>
+      <h3>Pokèdex</h3>
       <PokeInfoPanel
         currentPokemon={state.currentPokemonName}
         setCurrentPokemon={updateCurrentPokemon}
